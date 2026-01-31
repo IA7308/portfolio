@@ -1,50 +1,53 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
+/** =========================================================
+ * DIGITAX — PROFILE CONFIG (Content-ready for conversion)
+ * Fokus: Konsultan Pajak (CV Solusi Kita) + Jasa Website
+ * ========================================================= */
+
 const person: Person = {
   firstName: "DIGITAX",
   lastName: "SOLUTION",
-  name: `DIGITAX SOLUTON`,
+  name: `DIGITAX SOLUTION`,
   role: "Digital & Tax Solution Partner",
   avatar: "/images/avatar.jpg",
   email: "digitaxsolution@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "Asia/Jakarta",
+  languages: ["Bahasa Indonesia", "English"],
 };
 
+/** Newsletter: untuk akun jasa, lebih baik OFF dulu (fokus CTA layanan) */
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  display: false,
+  title: <>Update dari {person.firstName}</>,
+  description: <>Insight singkat pajak, akuntansi, dan strategi website bisnis.</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
-  {
-    name: "GitHub",
-    icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
+    link: "https://www.instagram.com/digitax.id/", // ganti sesuai akun
+    essential: true,
   },
   {
     name: "Threads",
     icon: "threads",
-    link: "https://www.threads.com/@once_ui",
-    essential: true,
+    link: "https://www.threads.com/@digitax.id", // opsional
+    essential: false,
+  },
+  {
+    name: "LinkedIn",
+    icon: "linkedin",
+    link: "https://www.linkedin.com/company/digitax/", // opsional
+    essential: false,
+  },
+  {
+    name: "TikTok",
+    icon: "tiktok", // pastikan icon tersedia di once-ui/icons.ts, kalau belum ada, hapus atau tambah icon
+    link: "https://www.tiktok.com/@digitax.id", // opsional
+    essential: false,
   },
   {
     name: "Email",
@@ -54,30 +57,42 @@ const social: Social = [
   },
 ];
 
+/** LINK UTAMA LAYANAN (CTA) */
+const MAIN_SERVICE_URL =
+  "https://cvsolusikita.com/jasa-layanan-konsultan-pajak-bandung/";
+const WEBSITE_SERVICE_URL =
+  "https://cvsolusikita.com/"; // ganti nanti ke landing khusus "jasa pembuatan website" kalau sudah ada
+
 const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  title: `Digitax — ${person.role}`,
+  description:
+    "Digitax membantu UMKM & bisnis digital: pajak rapi, akuntansi jelas, dan website siap jual.",
+  headline: <>Pajak rapi, bisnis tenang — ditutup dengan sistem digital yang benar.</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Layanan Utama</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Konsultan Pajak & Website
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: MAIN_SERVICE_URL,
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      Digitax adalah partner untuk bisnis yang ingin{" "}
+      <Text as="span" size="xl" weight="strong">
+        rapi secara pajak & rapi secara digital
+      </Text>
+      . <br />
+      Fokus kami: pendampingan pajak yang aman & layanan website yang siap dipakai untuk jualan.
+    </>
   ),
 };
 
@@ -85,148 +100,174 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Kenal Digitax: ${person.role} (Pajak & Website) – ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
   },
-  avatar: {
-    display: true,
-  },
+  avatar: { display: true },
+
+  /** kalau belum siap booking link, matikan dulu */
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
+
   intro: {
     display: true,
-    title: "Introduction",
+    title: "Tentang Digitax",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Digitax hadir untuk membantu UMKM, founder, dan bisnis digital yang ingin{" "}
+        <strong>pajak tertib</strong>, <strong>akuntansi rapi</strong>, dan{" "}
+        <strong>brand terlihat profesional</strong> lewat website yang benar.
+        <br />
+        <br />
+        Kami percaya: <em>bisnis bertumbuh itu bukan hanya soal omzet</em>, tapi juga soal{" "}
+        <strong>rekam jejak</strong>, <strong>kesiapan dokumen</strong>, dan{" "}
+        <strong>sistem kerja</strong> yang defensible saat dibutuhkan.
       </>
     ),
   },
+
+  /** Seksi "work" dipakai sebagai daftar LAYANAN (lebih cocok dari CV personal) */
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "Layanan",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Konsultan Pajak & Pendampingan",
+        timeframe: "On-going",
+        role: "Tax & Compliance Support",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Pendampingan pajak untuk bisnis & individu: mulai dari{" "}
+            <strong>review kepatuhan</strong>, <strong>perapihan</strong>, hingga strategi defensible.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Membantu klien memahami pajak dengan cara yang <strong>tenang, jelas, dan legal</strong>,
+            agar keputusan bisnis tidak diambil dalam kondisi panik.
+          </>,
+          <>
+            Arah layanan lengkap dapat dilihat di halaman resmi berikut:{" "}
+            <a href={MAIN_SERVICE_URL} target="_blank" rel="noreferrer">
+              layanan konsultan pajak
+            </a>
+            .
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Jasa Pembuatan Website Bisnis",
+        timeframe: "On-going",
+        role: "Business Website & Landing Page",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Pembuatan website untuk UMKM & bisnis jasa: fokus pada{" "}
+            <strong>kejelasan layanan</strong>, <strong>trust</strong>, dan{" "}
+            <strong>struktur yang mudah dikembangkan</strong>.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Cocok untuk: profil perusahaan, landing page, portofolio, halaman layanan, serta
+            integrasi CTA (WhatsApp / form / booking).
+          </>,
+          <>
+            Untuk sementara, hubungi melalui halaman utama:{" "}
+            <a href={WEBSITE_SERVICE_URL} target="_blank" rel="noreferrer">
+              website
+            </a>
+            . (Nanti kita bisa buat landing khusus “Jasa Website” agar konversinya lebih tajam.)
           </>,
         ],
         images: [],
       },
     ],
   },
+
+  /** Studies: jadikan “Credibility” */
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Fokus & Nilai Kerja",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Kepatuhan yang menenangkan",
+        description: (
+          <>
+            Kami mengutamakan pendekatan yang rapi, transparan, dan tidak menakut-nakuti klien.
+          </>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Sistem digital yang siap dipakai",
+        description: (
+          <>
+            Website bukan sekadar “ada”, tapi harus menjadi alat komunikasi layanan yang efektif
+            dan konsisten.
+          </>
+        ),
+      },
+      {
+        name: "Defensible & audit-friendly",
+        description: (
+          <>
+            Dari sisi pajak maupun dokumentasi bisnis, output kerja harus siap diuji, bukan sekadar
+            “kelihatan bagus”.
+          </>
+        ),
       },
     ],
   },
+
+  /** Technical: ganti dari Figma/Next jadi kapabilitas Digitax */
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Kapabilitas",
     skills: [
       {
-        title: "Figma",
+        title: "Pajak & Kepatuhan",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Review kepatuhan, perapihan data, pendampingan klarifikasi, serta perencanaan yang aman
+            untuk bisnis bertumbuh.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "Tax", icon: "sparkle" }, // sesuaikan icon yang ada
+          { name: "Compliance", icon: "check" },
+          { name: "Documentation", icon: "book" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Website untuk Jasa & UMKM",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Struktur halaman layanan, copywriting CTA, layout yang modern, dan fondasi SEO dasar
+            agar website bisa bekerja sebagai aset bisnis.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "Website", icon: "globe" },
+          { name: "Landing Page", icon: "layout" },
+          { name: "SEO", icon: "search" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Konten Edukasi (Reels/TikTok)",
+        description: (
+          <>
+            Konten singkat dengan fokus: problem → solusi → CTA. Cocok untuk membangun trust dan
+            memperluas reach (FYP).
+          </>
+        ),
+        tags: [
+          { name: "Short Video", icon: "video" },
+          { name: "Script", icon: "pen" },
+          { name: "Strategy", icon: "compass" },
         ],
+        images: [],
       },
     ],
   },
@@ -235,69 +276,31 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  title: "Catatan singkat pajak & bisnis digital",
+  description: "Insight praktis yang gampang dipahami: pajak, akuntansi, dan website bisnis.",
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  label: "Portfolio",
+  title: `Portfolio – ${person.name}`,
+  description: `Contoh proyek dan hasil kerja: pajak & website`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  title: `Galeri – ${person.name}`,
+  description: `Dokumentasi kegiatan & portofolio visual`,
   images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
+    { src: "/images/gallery/horizontal-1.jpg", alt: "Digitax activity", orientation: "horizontal" },
+    { src: "/images/gallery/vertical-4.jpg", alt: "Digitax work", orientation: "vertical" },
+    { src: "/images/gallery/horizontal-3.jpg", alt: "Digitax project", orientation: "horizontal" },
+    { src: "/images/gallery/vertical-1.jpg", alt: "Digitax meeting", orientation: "vertical" },
+    { src: "/images/gallery/vertical-2.jpg", alt: "Digitax collaboration", orientation: "vertical" },
+    { src: "/images/gallery/horizontal-2.jpg", alt: "Digitax portfolio", orientation: "horizontal" },
+    { src: "/images/gallery/horizontal-4.jpg", alt: "Digitax behind the scenes", orientation: "horizontal" },
+    { src: "/images/gallery/vertical-3.jpg", alt: "Digitax office", orientation: "vertical" },
   ],
 };
 
