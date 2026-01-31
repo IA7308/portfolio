@@ -7,7 +7,7 @@ import { Line, Row, Text } from "@once-ui-system/core";
  * ========================================================= */
 
 const person: Person = {
-  firstName: "DIGITAX",
+  firstName: "DIGIgitTAX",
   lastName: "SOLUTION",
   name: `DIGITAX SOLUTION`,
   role: "Digital & Tax Solution Partner",
