@@ -114,63 +114,30 @@ const about: About = {
   },
 
   intro: {
-  display: true,
-  title: "Tentang Digitax",
-  description: (
-    <>
-      <strong>Digitax Solution</strong> hadir sebagai partner{" "}
-      <strong>pajak + sistem digital</strong> untuk UMKM, founder, dan bisnis yang sedang
-      bertumbuh. Fokus kami sederhana: membantu bisnis menjadi{" "}
-      <strong>lebih rapi, lebih aman, dan lebih dipercaya</strong>—baik dari sisi
-      kepatuhan pajak maupun dari sisi tampilan profesional di ranah digital.
-      <br />
-      <br />
-      Kami percaya, bisnis yang kuat bukan hanya soal omzet. Pondasinya ada pada{" "}
-      <strong>akuntansi yang tertib</strong>, <strong>dokumen yang siap</strong>, dan{" "}
-      <strong>alur kerja yang defensible</strong> saat dibutuhkan (misalnya untuk evaluasi,
-      audit internal, kebutuhan bank, atau kepentingan due diligence).
-      <br />
-      <br />
-      Karena itu Digitax menggabungkan dua pilar utama:
-      <ul style={{ margin: "12px 0 0 18px" }}>
-        <li>
-          <strong>Pendampingan Pajak & Akuntansi</strong> — membantu menyusun dan menata data
-          agar kepatuhan berjalan tenang, jelas, dan legal (tanpa menakut-nakuti).
-        </li>
-        <li>
-          <strong>Website Bisnis yang “siap jual”</strong> — membangun profil digital yang
-          rapi, modern, dan meyakinkan, sehingga calon klien paham layanan Anda dan mudah
-          mengambil keputusan untuk menghubungi.
-        </li>
-      </ul>
-      <br />
-      Selain layanan konsultasi, kami juga menyiapkan ekosistem kerja digital yang mendukung
-      proses bisnis secara lebih tertib:
-      <ul style={{ margin: "12px 0 0 18px" }}>
-        <li>
-          <strong>Portal Akuntansi Pajak Web Basis</strong>{" "}
-          <a href="https://portalcvsolusikita.com/" target="_blank" rel="noreferrer">
-            (portalcvsolusikita.com)
-          </a>{" "}
-          — platform untuk praktik akuntansi terintegrasi, mulai dari input jurnal hingga
-          laporan keuangan yang rapi dan sistematis.
-        </li>
-        <li>
-          <strong>Member Area & Manajemen Dokumen</strong>{" "}
-          <a href="https://membercvsolusikita.com/" target="_blank" rel="noreferrer">
-            (membercvsolusikita.com)
-          </a>{" "}
-          — ruang kolaborasi yang lebih aman untuk pertukaran dokumen dan kebutuhan administrasi
-          klien secara terstruktur.
-        </li>
-      </ul>
-      <br />
-      Intinya, Digitax membantu bisnis membangun{" "}
-      <strong>ketenangan</strong> melalui sistem yang benar:{" "}
-      <em>pajak rapi → risiko terkendali → bisnis lebih siap melangkah</em>.
-    </>
-  ),
-};
+    display: true,
+    title: "Tentang Digitax",
+    description: (
+      <>
+        Digitax hadir untuk membantu UMKM, founder, dan bisnis digital yang ingin{" "}
+        <strong>pajak tertib</strong>, <strong>akuntansi rapi</strong>, dan{" "}
+        <strong>brand terlihat profesional</strong> lewat website yang benar.
+        <br />
+        <br />
+        Kami percaya: <em>bisnis bertumbuh itu bukan hanya soal omzet</em>, tapi juga soal{" "}
+        <strong>rekam jejak</strong>, <strong>kesiapan dokumen</strong>, dan{" "}
+        <strong>sistem kerja</strong> yang defensible saat dibutuhkan.
+      </>
+    ),
+  },
+
+isi untuk melengkapi https://easedigitax.vercel.app/about
+
+ini untuk refrensi :
+https://cvsolusikita.com/
+
+tambahkan juga bagian untuk bagian website builder:
+https://portalcvsolusikita.com/
+https://membercvsolusikita.com/
   /** Seksi "work" dipakai sebagai daftar LAYANAN (lebih cocok dari CV personal) */
   work: {
     display: true,
