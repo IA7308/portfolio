@@ -138,26 +138,33 @@ export interface About extends BasePageConfig {
   };
   /** Work experience section */
   work: {
-  display: boolean;
-  title: string;                 // tetap string
-  titleNode?: React.ReactNode;   // tambahan untuk JSX
-  titleId?: string;              // tambahan untuk id string
-
-  experiences: Array<{
-    company: string;               // tetap string
-    companyNode?: React.ReactNode; // tambahan untuk JSX
-    companyId?: string;            // untuk id string
-    timeframe: string;
-    role: string;
-    achievements: React.ReactNode[];
-    images?: Array<{
-      src: string;
-      alt: string;
-      width: number;
-      height: number;
+    /** Whether to display work experience */
+    display: boolean;
+    /** Title for the work experience section */
+    title: string;
+    /** List of work experiences */
+    experiences: Array<{
+      /** Company name */
+      company: string;
+      /** Timeframe of employment */
+      timeframe: string;
+      /** Role or job title */
+      role: string;
+      /** Achievements at the company */
+      achievements: React.ReactNode[];
+      /** Images related to the experience */
+      images?: Array<{
+        /** Image source path */
+        src: string;
+        /** Image alt text */
+        alt: string;
+        /** Image width ratio */
+        width: number;
+        /** Image height ratio */
+        height: number;
+      }>;
     }>;
-  }>;
-};
+  };
   /** Studies/education section */
   studies: {
     /** Whether to display studies section */

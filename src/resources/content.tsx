@@ -111,85 +111,91 @@ const about: About = {
 
   },
   work: {
-  display: true,
-
-  title: "Part of CV SOLUSI KITA",
-  titleId: "work-title",
-  titleNode: (
-    <>
-      Part of{" "}
-      <a
-        href="https://cvsolusikita.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ color: "inherit", fontWeight: 600, textDecoration: "underline" }}
-      >
-        CV SOLUSI KITA
-      </a>
-    </>
-  ),
-
-  experiences: [
-    {
-      company: "Portal",
-      companyId: "work-portal",
-      companyNode: (
+    display: true, // set to false to hide this section
+    title: (
+  <>
+    Part of{" "}
+    <a
+      href="https://cvsolusikita.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ color: "inherit", fontWeight: 600, textDecoration: "underline" }}
+    >
+      CV SOLUSI KITA
+    </a>
+  </>
+),
+    experiences: [
+      {
+         company: (
         <a
           href="https://portalcvsolusikita.com/"
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: "none", color: "inherit", fontWeight: 600 }}
         >
-          Portal
+          Portal 
         </a>
       ),
-      timeframe: "2024 - Sekarang",
-      role: "IT & Systems Development",
-      achievements: [
+        timeframe: "2024 - Sekarang",
+        role: "IT & Systems Development",
+        achievements: [
         <>
-          Merancang dan mengembangkan{" "}
-          <a
-            href="https://portalcvsolusikita.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none", color: "inherit", fontWeight: 600 }}
-          >
-            Portal CV SOLUSI KITA
-          </a>
-          , sebuah aplikasi web internal untuk mendukung akuntansi, pengelolaan data klien,
-          dan workflow pajak yang terstruktur dan defensible.
-        </>,
-        <>Membangun sistem akuntansi berbasis jurnal (1 transaksi = 1 jurnal) yang menghasilkan laporan keuangan siap klarifikasi dan pemeriksaan pajak.</>,
-        <>Mengembangkan modul persediaan dan HPP (FIFO) berbasis web dengan kontrol approval, validasi data, dan jejak audit internal.</>,
-        <>Mengintegrasikan website publik, portal internal, dan kebutuhan pajak menjadi satu ekosistem digital yang konsisten.</>,
-      ],
-      images: [],
-    },
-
-    {
-      company: "Member Portal (CV Solusi Kita)",
-      companyId: "work-member-portal",
-      companyNode: (
-        <a
-          href="https://membercvsolusikita.com/login"
+          Merancang dan mengembangkan <a
+          href="https://portalcvsolusikita.com/"
           target="_blank"
           rel="noopener noreferrer"
           style={{ textDecoration: "none", color: "inherit", fontWeight: 600 }}
         >
-          Member Portal (CV Solusi Kita)
+          Portal CV SOLUSI KITA
         </a>
-      ),
-      timeframe: "",
-      role: "Portal & Workflow System",
-      achievements: [
-        <>Merancang dan mengembangkan <b>Member Portal</b> untuk manajemen pengguna, autentikasi, dan distribusi dokumen/konten digital.</>,
-        <>Menyusun arsitektur UI/UX dashboard dan workflow internal yang menekankan kejelasan data, konsistensi, dan kemudahan penggunaan.</>,
+        , sebuah aplikasi web
+          internal untuk mendukung akuntansi, pengelolaan data klien, dan workflow pajak
+          yang terstruktur dan defensible.
+        </>,
+        <>
+          Membangun sistem akuntansi berbasis jurnal (1 transaksi = 1 jurnal) yang
+          menghasilkan laporan keuangan siap klarifikasi dan pemeriksaan pajak.
+        </>,
+        <>
+          Mengembangkan modul persediaan dan HPP (FIFO) berbasis web dengan kontrol
+          approval, validasi data, dan jejak audit internal.
+        </>,
+        <>
+          Mengintegrasikan website publik, portal internal, dan kebutuhan pajak
+          menjadi satu ekosistem digital yang konsisten.
+        </>,
       ],
-      images: [],
     },
+      {
+  company: (
+    <a
+      href="https://membercvsolusikita.com/login"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none", color: "inherit", fontWeight: 600 }}
+    >
+      Member Portal (CV Solusi Kita)
+    </a>
+  ),
+  timeframe: "",
+  role: "Portal & Workflow System",
+  achievements: [
+    <>
+      Merancang dan mengembangkan <b>Member Portal</b> untuk manajemen pengguna,
+      autentikasi, dan distribusi dokumen/konten digital.
+    </>,
+    <>
+      Menyusun arsitektur UI/UX dashboard dan workflow internal yang menekankan
+      kejelasan data, konsistensi, dan kemudahan penggunaan.
+    </>,
   ],
+  images: [],
 },
 
+
+    ],
+  },
   studies: {
   display: true,
   title: "Trusted by CV Solusi Kita",
