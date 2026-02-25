@@ -109,7 +109,7 @@ export const Header = () => {
                   </Row>
                 </>
               )}
-              {routes["/work"] && (
+              {/* {routes["/work"] && (
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
@@ -146,7 +146,7 @@ export const Header = () => {
                     />
                   </Row>
                 </>
-              )}
+              )} */}
               {routes["/gallery"] && (
                 <>
                   <Row s={{ hide: true }}>

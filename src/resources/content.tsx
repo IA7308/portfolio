@@ -1,53 +1,50 @@
 import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
-/** =========================================================
- * DIGITAX — PROFILE CONFIG (Content-ready for conversion)
- * Fokus: Konsultan Pajak (CV Solusi Kita) + Jasa Website
- * ========================================================= */
-
 const person: Person = {
-  firstName: "DIGIgitTAX",
-  lastName: "SOLUTION",
-  name: `DIGIGITTAX SOLUTION`,
-  role: "Digital & Tax Solution Partner",
-  avatar: "/images/avatar.jpg",
-  email: "rahmansuparlan@gmail.com",
-  location: "Asia/Jakarta",
-  languages: ["Bahasa Indonesia", "English"],
+  firstName: "DIGITAX",
+  lastName: "",
+  name: "DIGITAX",
+  role: "Website • Akuntansi • Perpajakan",
+  avatar: "/images/gallery/logodigitax.jpeg",
+  email: "rahmansuparlan603@gmail.com",
+  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
 
-/** Newsletter: untuk akun jasa, lebih baik OFF dulu (fokus CTA layanan) */
 const newsletter: Newsletter = {
   display: false,
-  title: <>Update dari {person.firstName}</>,
-  description: <>Insight singkat pajak, akuntansi, dan strategi website bisnis.</>,
+  title: <></>,
+  description: <></>,
 };
 
 const social: Social = [
-  {
-    name: "DIGITAX SOLUTION",
-    icon: "instagram",
-    link: "https://www.instagram.com/digitax.indonesia", // ganti sesuai akun
-    essential: true,
-  },
+  // Links are automatically displayed.
+  // Import new icons in /once-ui/icons.ts
+  // Set essentials: true for links you want to show on the about page
   // {
-  //   name: "Threads",
-  //   icon: "threads",
-  //   link: "https://www.threads.com/@digitax.id", // opsional
-  //   essential: false,
+  //   name: "GitHub",
+  //   icon: "github",
+  //   link: "https://github.com/once-ui-system",
+  //   essential: true,
   // },
   // {
   //   name: "LinkedIn",
   //   icon: "linkedin",
-  //   link: "https://www.linkedin.com/company/digitax/", // opsional
-  //   essential: false,
+  //   link: "https://www.linkedin.com/company/once-ui/",
+  //   essential: true,
   // },
   {
-    name: "DIGITAX SOLUTION",
-    icon: "tiktok", // pastikan icon tersedia di once-ui/icons.ts, kalau belum ada, hapus atau tambah icon
-    link: "https://www.tiktok.com/@digitax.solution?_r=1&_t=ZS-93WlMV0CzHr", // opsional
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/digitax.indonesia/",
     essential: false,
+  },
+  {
+    name: "Threads",
+    icon: "threads",
+    link: "https://www.instagram.com/digitax.indonesia/",
+    essential: true,
   },
   {
     name: "Email",
@@ -57,258 +54,306 @@ const social: Social = [
   },
 ];
 
-/** LINK UTAMA LAYANAN (CTA) */
-const MAIN_SERVICE_URL =
-  "https://cvsolusikita.com/jasa-layanan-konsultan-pajak-bandung/";
-const WEBSITE_SERVICE_URL =
-  "https://cvsolusikita.com/"; // ganti nanti ke landing khusus "jasa pembuatan website" kalau sudah ada
-
 const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
-  title: `Digitax — ${person.role}`,
-  description:
-    "Digitax membantu UMKM & bisnis digital: pajak rapi, akuntansi jelas, dan website siap jual.",
-  headline: <>Pajak rapi, bisnis tenang — ditutup dengan sistem digital yang benar.</>,
+  title: `${person.name}'s Portfolio`,
+  description: `Portfolio website showcasing my work as a ${person.role}`,
+  headline: <>Website Profesional, Akuntansi, dan Solusi Pajak Berbasis Digital</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Layanan Utama</strong>{" "}
+        <strong className="ml-4">Once UI</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Konsultan Pajak & Website
+          Featured work
         </Text>
       </Row>
     ),
-    href: MAIN_SERVICE_URL,
+    href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
     <>
-      Digitax adalah partner untuk bisnis yang ingin{" "}
-      <Text as="span" size="xl" weight="strong">
-        rapi secara pajak & rapi secara digital
-      </Text>
-      . <br />
-      Fokus kami: pendampingan pajak yang aman & layanan website yang siap dipakai untuk jualan.
-    </>
+    DIGITAX adalah startup yang menyediakan <Text as="span" size="xl" weight="strong">jasa pembuatan website, layanan akuntansi, dan solusi pajak</Text>, dengan pendekatan digital yang terstruktur.
+Kami membantu bisnis membangun sistem yang rapi, konsisten, dan dapat dipertanggungjawabkan — baik secara operasional maupun pajak.
+</>
   ),
 };
 
 const about: About = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Kenal Digitax: ${person.role} (Pajak & Website) – ${person.location}`,
+  label: "about",
+  title: `Tentang DIGITAX — Jasa Website, Akuntansi & Perpajakan`,
+  description: `DIGITAX menyediakan jasa pembuatan website, layanan akuntansi, dan solusi perpajakan berbasis digital.`,
   tableOfContent: {
     display: true,
     subItems: false,
   },
-  avatar: { display: true },
-
-  /** kalau belum siap booking link, matikan dulu */
+  avatar: {
+    display: true,
+  },
   calendar: {
-    display: false,
+    display: true,
     link: "https://cal.com",
   },
-
   intro: {
     display: true,
-    title: "Tentang Digitax",
+    title: "Profil Singkat",
     description: (
       <>
-        Digitax hadir untuk membantu UMKM, founder, dan bisnis digital yang ingin{" "}
-        <strong>pajak tertib</strong>, <strong>akuntansi rapi</strong>, dan{" "}
-        <strong>brand terlihat profesional</strong> lewat website yang benar.
-        <br />
-        <br />
-        Kami percaya: <em>bisnis bertumbuh itu bukan hanya soal omzet</em>, tapi juga soal{" "}
-        <strong>rekam jejak</strong>, <strong>kesiapan dokumen</strong>, dan{" "}
-        <strong>sistem kerja</strong> yang defensible saat dibutuhkan.
+        DIGITAX adalah penyedia jasa pembuatan website, layanan akuntansi, dan solusi perpajakan berbasis digital.
+        Fokus kami adalah membangun sistem yang rapi, konsisten, dan siap diuji—mulai dari website bisnis,
+        pembukuan, hingga dukungan kepatuhan dan penanganan persoalan perpajakan.
       </>
     ),
+
   },
-
-isi untuk melengkapi https://easedigitax.vercel.app/about
-
-ini untuk refrensi :
-https://cvsolusikita.com/
-
-tambahkan juga bagian untuk bagian website builder:
-https://portalcvsolusikita.com/
-https://membercvsolusikita.com/
-  /** Seksi "work" dipakai sebagai daftar LAYANAN (lebih cocok dari CV personal) */
   work: {
-    display: true,
-    title: "Layanan",
+    display: true, // set to false to hide this section
+    title: (
+  <>
+    Part of{" "}
+    <a
+      href="https://cvsolusikita.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ color: "inherit", fontWeight: 600, textDecoration: "underline" }}
+    >
+      CV SOLUSI KITA
+    </a>
+  </>
+),
     experiences: [
       {
-        company: "Konsultan Pajak & Pendampingan",
-        timeframe: "On-going",
-        role: "Tax & Compliance Support",
+         company: (
+        <a
+          href="https://portalcvsolusikita.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "inherit", fontWeight: 600 }}
+        >
+          Portal 
+        </a>
+      ),
+        timeframe: "2024 - Sekarang",
+        role: "IT & Systems Development",
         achievements: [
-          <>
-            Pendampingan pajak untuk bisnis & individu: mulai dari{" "}
-            <strong>review kepatuhan</strong>, <strong>perapihan</strong>, hingga strategi defensible.
-          </>,
-          <>
-            Membantu klien memahami pajak dengan cara yang <strong>tenang, jelas, dan legal</strong>,
-            agar keputusan bisnis tidak diambil dalam kondisi panik.
-          </>,
-          <>
-            Arah layanan lengkap dapat dilihat di halaman resmi berikut:{" "}
-            <a href={MAIN_SERVICE_URL} target="_blank" rel="noreferrer">
-              layanan konsultan pajak
-            </a>
-            .
-          </>,
-        ],
-        images: [],
-      },
+        <>
+          Merancang dan mengembangkan <a
+          href="https://portalcvsolusikita.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: "none", color: "inherit", fontWeight: 600 }}
+        >
+          Portal CV SOLUSI KITA
+        </a>
+        , sebuah aplikasi web
+          internal untuk mendukung akuntansi, pengelolaan data klien, dan workflow pajak
+          yang terstruktur dan defensible.
+        </>,
+        <>
+          Membangun sistem akuntansi berbasis jurnal (1 transaksi = 1 jurnal) yang
+          menghasilkan laporan keuangan siap klarifikasi dan pemeriksaan pajak.
+        </>,
+        <>
+          Mengembangkan modul persediaan dan HPP (FIFO) berbasis web dengan kontrol
+          approval, validasi data, dan jejak audit internal.
+        </>,
+        <>
+          Mengintegrasikan website publik, portal internal, dan kebutuhan pajak
+          menjadi satu ekosistem digital yang konsisten.
+        </>,
+      ],
+    },
       {
-        company: "Jasa Pembuatan Website Bisnis",
-        timeframe: "On-going",
-        role: "Business Website & Landing Page",
-        achievements: [
-          <>
-            Pembuatan website untuk UMKM & bisnis jasa: fokus pada{" "}
-            <strong>kejelasan layanan</strong>, <strong>trust</strong>, dan{" "}
-            <strong>struktur yang mudah dikembangkan</strong>.
-          </>,
-          <>
-            Cocok untuk: profil perusahaan, landing page, portofolio, halaman layanan, serta
-            integrasi CTA (WhatsApp / form / booking).
-          </>,
-          <>
-            Untuk sementara, hubungi melalui halaman utama:{" "}
-            <a href={WEBSITE_SERVICE_URL} target="_blank" rel="noreferrer">
-              website
-            </a>
-            . (Nanti kita bisa buat landing khusus “Jasa Website” agar konversinya lebih tajam.)
-          </>,
-        ],
-        images: [],
-      },
+  company: (
+    <a
+      href="https://membercvsolusikita.com/login"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none", color: "inherit", fontWeight: 600 }}
+    >
+      Member Portal (CV Solusi Kita)
+    </a>
+  ),
+  timeframe: "",
+  role: "Portal & Workflow System",
+  achievements: [
+    <>
+      Merancang dan mengembangkan <b>Member Portal</b> untuk manajemen pengguna,
+      autentikasi, dan distribusi dokumen/konten digital.
+    </>,
+    <>
+      Menyusun arsitektur UI/UX dashboard dan workflow internal yang menekankan
+      kejelasan data, konsistensi, dan kemudahan penggunaan.
+    </>,
+  ],
+  images: [],
+},
+
+
     ],
   },
-
-  /** Studies: jadikan “Credibility” */
   studies: {
-    display: true,
-    title: "Fokus & Nilai Kerja",
-    institutions: [
-      {
-        name: "Kepatuhan yang menenangkan",
-        description: (
-          <>
-            Kami mengutamakan pendekatan yang rapi, transparan, dan tidak menakut-nakuti klien.
-          </>
-        ),
-      },
-      {
-        name: "Sistem digital yang siap dipakai",
-        description: (
-          <>
-            Website bukan sekadar “ada”, tapi harus menjadi alat komunikasi layanan yang efektif
-            dan konsisten.
-          </>
-        ),
-      },
-      {
-        name: "Defensible & audit-friendly",
-        description: (
-          <>
-            Dari sisi pajak maupun dokumentasi bisnis, output kerja harus siap diuji, bukan sekadar
-            “kelihatan bagus”.
-          </>
-        ),
-      },
-    ],
-  },
+  display: true,
+  title: "Trusted by CV Solusi Kita",
+  institutions: [
+    {
+      name: "CV Solusi Kita",
+      description: (
+        <>
+          DIGITAX merupakan bagian dari ekosistem{" "}
+          <a
+            href="https://cvsolusikita.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontWeight: 600, color: "inherit", textDecoration: "underline" }}
+          >
+            CV Solusi Kita
+          </a>
+          , sebuah entitas konsultan pajak dan akuntansi yang telah beroperasi
+          dan menangani berbagai kebutuhan kepatuhan serta problem solving perpajakan.
+        </>
+      ),
+    },
+    {
+      name: "Ekosistem Akuntansi & Pajak",
+      description: (
+        <>
+          Sistem digital DIGITAX dikembangkan untuk mendukung praktik nyata
+          akuntansi dan perpajakan, termasuk pembukuan, penyusunan laporan keuangan,
+          serta penanganan klarifikasi dan pemeriksaan pajak.
+        </>
+      ),
+    },
+  ],
+},
 
-  /** Technical: ganti dari Figma/Next jadi kapabilitas Digitax */
   technical: {
-    display: true,
-    title: "Kapabilitas",
+    display: true, // set to false to hide this section
+    title: "Technical skills",
     skills: [
-      {
-        title: "Pajak & Kepatuhan",
-        description: (
-          <>
-            Review kepatuhan, perapihan data, pendampingan klarifikasi, serta perencanaan yang aman
-            untuk bisnis bertumbuh.
-          </>
-        ),
-        tags: [
-          { name: "Tax", icon: "sparkle" }, // sesuaikan icon yang ada
-          { name: "Compliance", icon: "check" },
-          { name: "Documentation", icon: "book" },
-        ],
-        images: [],
-      },
-      {
-        title: "Website untuk Jasa & UMKM",
-        description: (
-          <>
-            Struktur halaman layanan, copywriting CTA, layout yang modern, dan fondasi SEO dasar
-            agar website bisa bekerja sebagai aset bisnis.
-          </>
-        ),
-        tags: [
-          { name: "Website", icon: "globe" },
-          { name: "Landing Page", icon: "layout" },
-          { name: "SEO", icon: "search" },
-        ],
-        images: [],
-      },
-      {
-        title: "Konten Edukasi (Reels/TikTok)",
-        description: (
-          <>
-            Konten singkat dengan fokus: problem → solusi → CTA. Cocok untuk membangun trust dan
-            memperluas reach (FYP).
-          </>
-        ),
-        tags: [
-          { name: "Short Video", icon: "video" },
-          { name: "Script", icon: "pen" },
-          { name: "Strategy", icon: "compass" },
-        ],
-        images: [],
-      },
-    ],
+  {
+  title: "Website Audit & Digital Assessment",
+  description: (
+    <>
+      Melakukan audit menyeluruh terhadap website dari sisi struktur, performa,
+      keamanan, dan SEO untuk mengidentifikasi masalah serta peluang perbaikan
+      sebelum dilakukan optimasi atau pengembangan lanjutan.
+    </>
+  ),
+  tags: [
+    { name: "Audit", icon: "figma" },
+    { name: "SEO", icon: "figma" },
+    { name: "Performance", icon: "figma" },
+  ],
+  images: [
+    {
+      src: "/images/projects/about/portal1.png",
+      alt: "Website Audit & Digital Assessment – DIGITAX",
+      width: 16,
+      height: 9,
+    },
+  ],
+},
+
+{
+  title: "Integrasi Website & Sistem Bisnis",
+  description: (
+    <>
+      Mengintegrasikan website dengan kebutuhan operasional bisnis seperti formulir
+      data klien, sistem booking, dashboard internal, dan workflow administrasi
+      untuk mendukung proses akuntansi dan pengelolaan data yang lebih rapi.
+    </>
+  ),
+  tags: [
+    { name: "Integration", icon: "figma" },
+    { name: "Workflow", icon: "figma" },
+    { name: "System", icon: "figma" },
+  ],
+  images: [
+    {
+      src: "/images/projects/about/lainnya3hd.png",
+      alt: "Integrasi Website & Sistem Bisnis – DIGITAX",
+      width: 16,
+      height: 9,
+    },
+  ],
+},
+
+],
+
   },
 };
 
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Catatan singkat pajak & bisnis digital",
-  description: "Insight praktis yang gampang dipahami: pajak, akuntansi, dan website bisnis.",
+  title: "Writing about design and tech...",
+  description: `Read what ${person.name} has been up to recently`,
+  // Create new blog posts by adding a new .mdx file to app/blog/posts
+  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
-  label: "Portfolio",
-  title: `Portfolio – ${person.name}`,
-  description: `Contoh proyek dan hasil kerja: pajak & website`,
+  label: "Work",
+  title: `Projects – ${person.name}`,
+  description: `Design and dev projects by ${person.name}`,
+  // Create new project pages by adding a new .mdx file to app/blog/posts
+  // All projects will be listed on the /home and /work routes
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Galeri – ${person.name}`,
-  description: `Dokumentasi kegiatan & portofolio visual`,
+  title: `Photo gallery – ${person.name}`,
+  description: `A photo collection by ${person.name}`,
+  // Images by https://lorant.one
+  // These are placeholder images, replace with your own
   images: [
-    { src: "/images/gallery/horizontal-1.jpg", alt: "Digitax activity", orientation: "horizontal" },
-    { src: "/images/gallery/vertical-4.jpg", alt: "Digitax work", orientation: "vertical" },
-    { src: "/images/gallery/horizontal-3.jpg", alt: "Digitax project", orientation: "horizontal" },
-    { src: "/images/gallery/vertical-1.jpg", alt: "Digitax meeting", orientation: "vertical" },
-    { src: "/images/gallery/vertical-2.jpg", alt: "Digitax collaboration", orientation: "vertical" },
-    { src: "/images/gallery/horizontal-2.jpg", alt: "Digitax portfolio", orientation: "horizontal" },
-    { src: "/images/gallery/horizontal-4.jpg", alt: "Digitax behind the scenes", orientation: "horizontal" },
-    { src: "/images/gallery/vertical-3.jpg", alt: "Digitax office", orientation: "vertical" },
+    {
+      src: "/images/gallery/portal1.png",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/lainnya1.png",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/lainnyakafe.png",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/lainnya22.png",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/iniportalreal.png",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/member.png",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/lainnya4hdd.png",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/lainnya33.png",
+      alt: "image",
+      orientation: "horizontal",
+    },
   ],
 };
 
